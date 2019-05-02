@@ -98,13 +98,12 @@ function double(obj) {
 //Code Here
 function secrets(obj) {
   let str = '';
-  for(let key in obj) {
-    let keyNames = Object.keys(obj)   // NEEDS WORK
-      if(keyNames.startsWith('sh')) { 
+  for(key in obj) {
+      if(key.startsWith('sh')) { 
         str += obj[key]
     }
   }
-  console.log(str)
+  return str
 }
 
 
@@ -180,8 +179,8 @@ for(let key in deleteTheBigNumbers) {
 
 //Code Here
 function startsWithK(obj) {
-  for(let key in obj) {
-    if(obj[key][0] === 'k') {  // NEEDS WORK
+  for(key in obj) {
+    if(key.startsWith('k')) {  
       delete obj[key]
     }
   }
@@ -202,7 +201,7 @@ function startsWithK(obj) {
 
 //Code Here
 function hiddenTreasure(obj) {
-  for(let key in obj) {
+  for(key in obj) {
     if(!obj[key].includes('treasure')) {
       delete obj[key];
     }
